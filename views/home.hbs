@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendations</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <ul class="nav nav-tabs" id="myTabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="attractions-tab" data-toggle="tab" href="#attractions" role="tab"
+            aria-controls="attractions" aria-selected="false">Attractions</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="activities-tab" data-toggle="tab" href="#activities" role="tab"
+            aria-controls="activities" aria-selected="false">Activities</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="restaurants-tab" data-toggle="tab" href="#restaurants" role="tab"
+            aria-controls="restaurants" aria-selected="false">Restaurants</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="share-tab" data-toggle="tab" href="#share" role="tab" aria-controls="share"
+            aria-selected="false">Share Your Experience</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabsContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="container mt-5">
+            <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="jumbotron">
+                <h1 class="display-4 text-center">Travel Recommendations</h1>
+                <p class="lead text-center">Discover new attractions, activities, and restaurants</p>
+                </div>
+                <form id="searchForm">
+                <h2>Search for a Location</h2>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="Enter location"
+                    required>
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="tab-pane fade" id="attractions" role="tabpanel" aria-labelledby="attractions-tab">
+        <div class="container mt-5">
+            <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2>Recommended Attractions</h2>
+                <div id="attractionsList" class="row"></div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-tab">
+        <div class="container mt-5">
+            <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2>Recommended Cities</h2>
+                <div id="citiesList" class="row"></div>
+            </div>
+            </div>
+        </div>
+        </div>
+</body>
+</html>
