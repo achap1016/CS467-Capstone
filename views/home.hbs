@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+    <!-- script src='script.js'></script -->
     <ul class="nav nav-tabs" id="myTabs">
         <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="home" role="tab" aria-controls="home"
@@ -41,12 +42,11 @@
                 <h1 class="display-4 text-center">Travel Recommendations</h1>
                 <p class="lead text-center">Discover new attractions, activities, and restaurants</p>
                 </div>
-                <form id="searchForm">
+                <form action="/home" method="post" id="searchForm">
                 <h2>Search for a Location</h2>
                 <div class="form-group">
                     <label for="location">Location:</label>
-                    <input type="text" class="form-control" id="location" name="location" placeholder="Enter location"
-                    required>
+                    <input type="text" class="form-control" id="location" name="country" placeholder="Enter location">
                 </div>
                 <button type="submit" class="btn btn-primary">Search</button>
                 </form>
