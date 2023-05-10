@@ -54,6 +54,22 @@ app.post("/signup", async(req, res) => {
     res.redirect("home");
 });
 
+app.get("/attractions", (req, res) => {
+    res.render("attractions");
+});
+
+app.get("/activities", (req, res) => {
+    res.render("activities");
+});
+
+app.get("/restaurants", (req, res) => {
+    res.render("restaurants");
+});
+
+app.get("/share", (req, res) => {
+    res.render("share");
+});
+
 // app.get('/countryname', async(request, response) => {
 //     const url = 'https://countries-cities.p.rapidapi.com/location/country/list';
 //     const options = {
