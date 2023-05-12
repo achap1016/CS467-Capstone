@@ -10,6 +10,10 @@
 </head>
 <body>
     <!-- script src='script.js'></script -->
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Travel Recommendations</h1>
+        <p class="lead text-center">Discover new attractions, activities, and restaurants</p>
+    </div>
     <ul class="nav nav-tabs" id="myTabs">
         <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="home" role="tab" aria-controls="home"
@@ -38,10 +42,6 @@
         <div class="container mt-5">
             <div class="row">
             <div class="col-md-8 offset-md-2">
-                <div class="jumbotron">
-                <h1 class="display-4 text-center">Travel Recommendations</h1>
-                <p class="lead text-center">Discover new attractions, activities, and restaurants</p>
-                </div>
                 <form action="/home" method="post" id="searchForm">
                 <h2>Search for a Location</h2>
                 <div class="form-group">
@@ -50,9 +50,59 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Search</button>
                 </form>
+
             </div>
             </div>
         </div>
+
+        <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Attractions</h5>
+                                    <p class="card-text">Explore popular attractions in the area.</p>
+                                    <a href="attractions" class="btn btn-primary">Go to Attractions</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Activities</h5>
+                                    <p class="card-text">Discover exciting activities to do.</p>
+                                    <a href="activities" class="btn btn-primary">Go to Activities</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Restaurants</h5>
+                                    <p class="card-text">Discover exciting activities to do.</p>
+                                    <a href="restaurants" class="btn btn-primary">Go to Restaurants</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Share Your Experience</h5>
+                                    <p class="card-text">Discover exciting activities to do.</p>
+                                    <a href="share" class="btn btn-primary">Go to Share</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
         </div>
         <div class="tab-pane fade" id="attractions" role="tabpanel" aria-labelledby="attractions-tab">
         <div class="container mt-5">
@@ -74,5 +124,7 @@
             </div>
         </div>
         </div>
+
+
 </body>
 </html>
