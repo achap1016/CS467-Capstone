@@ -5,6 +5,8 @@ const port = 3000;
 const hbs = require("hbs");
 const collection = require("./loginsignupdb");
 const countryCityCollection = require("./countrycitydb");
+const experiencesCollection = require("./experiencesdb");
+const multer = require('multer');
 
 app.use(express.json());
 app.set("view engine", "hbs");
@@ -45,6 +47,25 @@ app.post("/login", async(req, res) => {
     }
 });
 
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+
+app.post("/createexperience", upload.single('image'),  async(req, res) => {
+    try {    
+        const data = {
+            title: req.body.title,
+            description: req.body.description,
+            geolocation: req.body.geolocation,
+            image: req.file.buffer,
+            rating: req.body.rating
+        };
+        await experiencesCollection.insertMany([data]);
+        res.redirect("createexperience");
+    } catch (error) {
+        res.status(500).send('Server Error');
+    }
+});
+
 app.post("/signup", async(req, res) => {
     const data = {
         name: req.body.name,
@@ -68,6 +89,10 @@ app.get("/restaurants", (req, res) => {
 
 app.get("/share", (req, res) => {
     res.render("share");
+});
+
+app.get("/createexperience", (req, res) => {
+    res.render("createexperience");
 });
 
 // app.get('/countryname', async(request, response) => {
