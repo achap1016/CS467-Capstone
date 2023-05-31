@@ -95,6 +95,10 @@ app.get("/createexperience", (req, res) => {
     res.render("createexperience");
 });
 
+app.get("/viewexperiences", (req, res) => {
+    res.render("viewexperiences");
+});
+
 // app.get('/countryname', async(request, response) => {
 //     const url = 'https://countries-cities.p.rapidapi.com/location/country/list';
 //     const options = {
