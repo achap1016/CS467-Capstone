@@ -22,10 +22,10 @@
           <a class="nav-link" href="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="attractions">Attractions <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="attractions">Attractions</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="activities">Activities</a>
+          <a class="nav-link" href="activities">Activities <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="restaurants">Restaurants</a>
@@ -42,5 +42,20 @@
       </ul>
     </div>
   </nav>
+  <div class="container">
+    <h1>Activities</h1>
+    {{#each experiences}}
+      <div class="card">
+        <img class="card-img-top" src="{{image}}" alt="Experience Image">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{description}}</p>
+          <p class="card-text">{{experienceType}}</p>
+          <p class="card-text">Geolocation: {{geolocation}}</p>
+          <p class="card-text">Rating: {{rating}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
 </body>
 </html>
