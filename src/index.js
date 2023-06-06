@@ -95,8 +95,12 @@ app.get("/createexperience", (req, res) => {
     res.render("createexperience");
 });
 
-app.get("/viewexperiences", (req, res) => {
-    res.render("viewexperiences");
+app.get("/viewexperiences", async (req, res) => {
+    experiencesCollection.find({}, function(err, experiences) {
+        res.render('viewexperiences', {
+            experiencesList: experiences
+        })
+    })
 });
 
 // app.get('/countryname', async(request, response) => {
