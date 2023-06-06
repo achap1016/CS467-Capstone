@@ -7,6 +7,7 @@
     <title>Create an Experience</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/createanexperience.css">
 </head>
 
 <body>
@@ -42,28 +43,33 @@
       </ul>
     </div>
   </nav>
-  <form action="/createexperience" method="post" enctype="multipart/form-data">
-        <h2>Create an Experience</h2>
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Enter a title">
-            <label for="description">Description</label>
-            <input type="text" class="form-control" id="description" name="description" placeholder="Enter a description">
-            <label for="experienceType">Experience Type</label>
-            <select class="form-control" id="experienceType" name="experienceType">
-              <option value="">Select an experience type</option>
-              <option value="Attraction">Attraction</option>
-              <option value="Activity">Activity</option>
-              <option value="Restaurant">Restaurant</option>
-            </select>
-            <label for="geolocation">Geo-location</label>
-            <input type="text" class="form-control" id="geolocation" name="geolocation" placeholder="Enter the geolocation">
-            <label for="image">Image</label>
-            <input type="file" class="form-control" id="image" name="image">
-            <label for="rating">Rating</label>
-            <input type="text" class="form-control" id="rating" name="rating" placeholder="Enter a rating">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+
+  <div class="center-container">
+    <form action="/createexperience" method="post" enctype="multipart/form-data">
+            <h2>Create an Experience</h2>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter a title">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" name="description" placeholder="Enter a description">
+                <label for="experienceType">Experience Type</label>
+                <select class="form-control" id="experienceType" name="experienceType">
+                  <option value="">Select an experience type</option>
+                  <option value="Attraction">Attraction</option>
+                  <option value="Activity">Activity</option>
+                  <option value="Restaurant">Restaurant</option>
+                </select>
+                <label for="geolocation">Geo-location</label>
+                <input type="text" class="form-control" id="geolocation" name="geolocation" placeholder="Enter the geolocation">
+                <label for="image">Image</label>
+                <input type="file" class="form-control" id="image" name="image">
+                <label for="rating">Rating</label>
+                <input type="text" class="form-control" id="rating" name="rating" placeholder="Enter a rating">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+  </div>
+  
 </body>
 </html>

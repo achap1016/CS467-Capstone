@@ -1,0 +1,29 @@
+body {
+    background-image: url("images/activitiesbackgroundtab.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.centered-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.center-container {
+    max-width: 1000px;
+    width: 100%;
+    margin:auto;
+
+    height: 50hv;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-color{
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
