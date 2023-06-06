@@ -55,6 +55,7 @@ app.post("/createexperience", upload.single('image'),  async(req, res) => {
         const data = {
             title: req.body.title,
             description: req.body.description,
+            experienceType: req.body.experienceType,
             geolocation: req.body.geolocation,
             image: req.file.buffer,
             rating: req.body.rating
@@ -75,16 +76,46 @@ app.post("/signup", async(req, res) => {
     res.redirect("home");
 });
 
-app.get("/attractions", (req, res) => {
-    res.render("attractions");
+app.get("/attractions", async (req, res) => {
+    try {
+        const experiences = await experiencesCollection.find({experienceType: {$eq: 'Attraction'}});
+        const experiencesWithImages = experiences.map(experience => ({
+            ...experience._doc,
+            image: `data:image/jpeg;base64,${experience.image.toString('base64')}`
+        }));
+        res.render('viewexperiences', { experiences:experiencesWithImages });
+    } catch (error) {
+        console.log('Error fetching experience:', error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
-app.get("/activities", (req, res) => {
-    res.render("activities");
+app.get("/activities", async (req, res) => {
+    try {
+        const experiences = await experiencesCollection.find({experienceType: {$eq: 'Activity'}});
+        const experiencesWithImages = experiences.map(experience => ({
+            ...experience._doc,
+            image: `data:image/jpeg;base64,${experience.image.toString('base64')}`
+        }));
+        res.render('viewexperiences', { experiences:experiencesWithImages });
+    } catch (error) {
+        console.log('Error fetching experience:', error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
-app.get("/restaurants", (req, res) => {
-    res.render("restaurants");
+app.get("/restaurants", async (req, res) => {
+    try {
+        const experiences = await experiencesCollection.find({experienceType: {$eq: 'Restaurant'}});
+        const experiencesWithImages = experiences.map(experience => ({
+            ...experience._doc,
+            image: `data:image/jpeg;base64,${experience.image.toString('base64')}`
+        }));
+        res.render('viewexperiences', { experiences:experiencesWithImages });
+    } catch (error) {
+        console.log('Error fetching experience:', error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
 app.get("/share", (req, res) => {

@@ -42,8 +42,22 @@
       </ul>
     </div>
   </nav>
-
-  <div class="container mt-5">
+  <div class="container">
+    <h1>Attractions</h1>
+    {{#each experiences}}
+      <div class="card">
+        <img class="card-img-top" src="{{image}}" alt="Experience Image">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{description}}</p>
+          <p class="card-text">{{experienceType}}</p>
+          <p class="card-text">Geolocation: {{geolocation}}</p>
+          <p class="card-text">Rating: {{rating}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  {{!-- <div class="container mt-5">
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <h2>Recommended Attractions</h2>
@@ -63,7 +77,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
   <!-- Include Bootstrap and jQuery JavaScript libraries -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

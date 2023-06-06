@@ -17,6 +17,10 @@ const ExperienceSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    experienceType: {
+        type: String,
+        required: true
+    },
     geolocation: {
         type: String,
         required: true
