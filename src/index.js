@@ -95,6 +95,20 @@ app.get("/createexperience", (req, res) => {
     res.render("createexperience");
 });
 
+app.get("/viewexperiences", async (req, res) => {
+    try {
+        const experiences = await experiencesCollection.find();
+        const experiencesWithImages = experiences.map(experience => ({
+            ...experience._doc,
+            image: `data:image/jpeg;base64,${experience.image.toString('base64')}`
+        }));
+        res.render('viewexperiences', { experiences:experiencesWithImages });
+    } catch (error) {
+        console.log('Error fetching experience:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 // app.get('/countryname', async(request, response) => {
 //     const url = 'https://countries-cities.p.rapidapi.com/location/country/list';
 //     const options = {

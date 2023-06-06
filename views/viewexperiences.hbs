@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attractions</title>
+    <title>View Experiences</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -21,7 +21,7 @@
         <li class="nav-item">
           <a class="nav-link" href="home">Home</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="attractions">Attractions <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
@@ -33,7 +33,7 @@
         <li class="nav-item">
           <a class="nav-link" href="share">Share Your Experience</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="viewexperiences">View Experiences</a>
         </li>
         <li class="nav-item">
@@ -42,33 +42,19 @@
       </ul>
     </div>
   </nav>
-
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <h2>Recommended Attractions</h2>
-        <div id="attractionsList" class="row">
-          <!-- Example of an attraction card -->
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Attraction Image">
-              <div class="card-body">
-                <h5 class="card-title">Attraction Title</h5>
-                <p class="card-text">Attraction Description</p>
-                <a href="#" class="btn btn-primary">Details</a>
-              </div>
-            </div>
-          </div>
-          <!-- Will add more attraction cards here -->
+  <div class="container">
+    <h1>Experiences</h1>
+    {{#each experiences}}
+      <div class="card">
+        <img class="card-img-top" src="{{image}}" alt="Experience Image">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{description}}</p>
+          <p class="card-text">Geolocation: {{geolocation}}</p>
+          <p class="card-text">Rating: {{rating}}</p>
         </div>
       </div>
-    </div>
+    {{/each}}
   </div>
-
-  <!-- Include Bootstrap and jQuery JavaScript libraries -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-
 </html>
